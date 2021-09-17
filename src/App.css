@@ -18,3 +18,23 @@ html, body {
 img{
   width: 40%;
 }
+
+.character-display{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+}
+
+.item-details{
+  border: 1px solid white;
+  background-color: transparent;
+  padding: 20px;
+}
+
+h1{
+  text-align: center;
+}
+
+li{
+  list-style: none;
+}
