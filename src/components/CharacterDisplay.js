@@ -8,7 +8,7 @@ const CharacterDisplay = ({ item }) => {
 	const [show, setShow] = useState(false);
 
 
-	useEffect(() => {
+	useEffect(async () => {
 		const fetchHomeworld = async () => {
 			setLoading(true);
 			let response = await axios(item.homeworld)
@@ -16,7 +16,7 @@ const CharacterDisplay = ({ item }) => {
 			setHomeworld(response.data.name)
 			setLoading(false)
 		}
-		fetchHomeworld()
+		await fetchHomeworld()
 	}, [])
 
 	/* function changeColor(e) {

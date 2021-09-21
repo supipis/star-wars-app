@@ -8,10 +8,7 @@ const Items = ({ items, loading }) => {
 	return (
 		<section className="character-display">
 			{items.map((item, i) => (
-
 				<CharacterDisplay key={i} item={item}></CharacterDisplay>
-
-
 			))}
 		</section>
 	);

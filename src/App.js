@@ -33,16 +33,24 @@ const App = () => {
   const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  // return (
+  //   <div className="container">
+  //     <Header />
+  //     <Search getQuery={(q) => setQuery(q)} />
+  //     <Pagenav />
+  //     <Items items={currentItems} loading={loading} />
+  //     <Pagination itemsPerPage={10} totalItems={82} paginate={paginate} />
+
+  //   </div>
+  // );
+
   return (
     <div className="container">
       <Header />
       <Search getQuery={(q) => setQuery(q)} />
-      <Items items={currentItems} loading={loading} />
       <Pagenav />
-      <Pagination itemsPerPage={10} totalItems={82} paginate={paginate} />
-
     </div>
-  );
+  )
 }
 
 export default App;
