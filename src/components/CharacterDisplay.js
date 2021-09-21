@@ -5,6 +5,7 @@ const CharacterDisplay = ({ item }) => {
 
 	const [homeworld, setHomeworld] = useState("Loading...");
 	const [loading, setLoading] = useState(false);
+	const [show, setShow] = useState(false);
 
 
 	useEffect(() => {
@@ -18,16 +19,27 @@ const CharacterDisplay = ({ item }) => {
 		fetchHomeworld()
 	}, [])
 
+	/* function changeColor(e) {
+		e.target.style.color = 'red';
+	} */
+
 	return (
 		<div className="item-details">
-			<h1>{item.name}</h1>
-			<ul>
+			<div className="item-details__mini">
+				<button onClick={() => setShow(!show)}><h1>{item.name}</h1></button>
+				{
+					show ? <ul>
 				<li>Birth year :{item.birth_year}</li>
 				<li>Gender : {item.gender}</li>
 				<li>height : {item.height}</li>
 				<li>Home world : {homeworld}</li>
 
-			</ul>
+					</ul> : null}
+				{/*<button onClick={() => setShow(true)}>Show</button>
+			<button onClick={() => setShow(false)}>Hide</button>*/}
+
+
+			</div>
 		</div>
 	)
 }

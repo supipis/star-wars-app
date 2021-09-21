@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Items from './components/Items';
 import Pagination from './components/Pagination';
 import Search from './components/Search';
+import Pagenav from './components/Pagenav';
 
 const App = () => {
   const [items, setItems] = useState([]);
@@ -37,7 +38,9 @@ const App = () => {
       <Header />
       <Search getQuery={(q) => setQuery(q)} />
       <Items items={currentItems} loading={loading} />
+      <Pagenav />
       <Pagination itemsPerPage={10} totalItems={82} paginate={paginate} />
+
     </div>
   );
 }

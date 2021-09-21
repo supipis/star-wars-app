@@ -5,10 +5,10 @@
 }
 
 html, body {
-  background: #000 url('img/star_bg.jpeg') no-repeat center/cover;
-  height: 100vh;
+  background: #000 url('img/starbg.jpeg') no-repeat center/cover;
+  height: auto;
   color: #fff;
-  font-size: Arial;
+  font-family: Arial;
 }
 
 .center{
@@ -16,25 +16,101 @@ html, body {
 }
 
 img{
-  width: 40%;
+  width: 20%;
 }
 
 .character-display{
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 2rem;
+  margin: 30px;
 }
 
 .item-details{
-  border: 1px solid white;
   background-color: transparent;
-  padding: 20px;
+}
+
+.item-details__mini{
+  border: 1px solid white;
+  border-radius: 6px;
+  text-align: center;
+  padding: 25px;
 }
 
 h1{
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 li{
   list-style: none;
 }
+
+button {
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+  color: white;
+  cursor: pointer;
+  
+}
+
+button :hover{
+  color: black;
+  background: white;
+}
+
+form{
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+input{
+  padding: 6px 15px;
+  font-size: 15px;
+}
+
+ul{
+  text-align: left;
+}
+
+.pageNav{
+  text-align: center;
+}
+
+.navs{
+  font-size: 15px;
+  background: white;
+  color: black;
+  margin: 5px;
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+@media (max-width: 1023px){
+  .character-display{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px){
+  .character-display{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px){
+  .character-display{
+    display: block;
+  }
+  .item-details__mini{
+    margin-bottom: 20px;
+  }
+}
+
