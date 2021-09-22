@@ -19,9 +19,6 @@ const CharacterDisplay = ({ item }) => {
 		await fetchHomeworld()
 	}, [])
 
-	/* function changeColor(e) {
-		e.target.style.color = 'red';
-	} */
 
 	return (
 		<div className="item-details">
@@ -35,8 +32,7 @@ const CharacterDisplay = ({ item }) => {
 				<li>Home world : {homeworld}</li>
 
 					</ul> : null}
-				{/*<button onClick={() => setShow(true)}>Show</button>
-			<button onClick={() => setShow(false)}>Hide</button>*/}
+				
 
 
 			</div>

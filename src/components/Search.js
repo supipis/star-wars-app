@@ -1,4 +1,3 @@
-import { getSuggestedQuery } from "@testing-library/react";
 import React, { useState } from "react";
 
 const Search = ({ searchQuery, setSearchQuery }) => {
@@ -11,7 +10,7 @@ const Search = ({ searchQuery, setSearchQuery }) => {
       <form>
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search characters"
           autoFocus
           value={searchQuery}
           onChange={(e) => onChange(e.target.value)}

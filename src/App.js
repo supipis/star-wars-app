@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import Header from './components/Header';
-import Items from './components/Items';
 import Search from './components/Search';
 import Pagenav from './components/Pagenav';
 
