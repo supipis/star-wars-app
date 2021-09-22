@@ -12,27 +12,18 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [totalItems] = useState(82);
-  const [resultsUrl, setResultsUrl] = useState('')
-  const [searchQuery, setSearchQuery] = useState('')
-
-  // useEffect(() => {
-  //   const fetchItems = async () => {
-  //     setLoading(true);
-  //     const res = await axios(`https://swapi.dev/api/people?name=${query}`)
-  //     console.log(res.data.results)
-  //     setItems(res.data.results)
-  //     setLoading(false)
-  //   }
-  //   fetchItems()
-  // }, [query])
-
+  const [query, setQuery] = useState('')
+  
   useEffect(() => {
-    if (searchQuery.length > 0) {
-      setResultsUrl("https://swapi.dev/api/people?search=" + searchQuery);
-    } else {
-      setResultsUrl("https://swapi.dev/api/people");
+    const fetchItems = async () => {
+      setLoading(true);
+      const res = await axios(`https://swapi.dev/api/people?name=${query}`)
+      console.log(res.data.results)
+      setItems(res.data.results)
+      setLoading(false)
     }
-  }, [searchQuery])
+    fetchItems()
+  }, [query])
 
   
 
@@ -52,19 +43,11 @@ const App = () => {
   //   </div>
   // );
 
-  // function updateResultsUrl(searchQuery) {
-  //   if (searchQuery.length > 0) {
-  //     setResultsUrl("https://swapi.dev/api/people?search=" + searchQuery);
-  //   } else {
-  //     setResultsUrl("https://swapi.dev/api/people");
-  //   }
-  // }
-
   return (
     <div className="container">
       <Header />
-      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <Pagenav resultsUrl={resultsUrl}/>
+      <Search getQuery={(q) => setQuery(q)} />
+      <Pagenav />
     </div>
   )
 }

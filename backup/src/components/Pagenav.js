@@ -3,7 +3,7 @@ import CharacterDisplay from './CharacterDisplay';
 import Items from './Items';
 
 
-const Pagenav = ({resultsUrl}) => {
+const Pagenav = () => {
  const [results, setResults] = useState([]);
  const [nextPageUrl, setNextPageUrl] = useState(null);
  const [previousPageUrl, setPreviousPageUrl] = useState(null);
@@ -19,8 +19,8 @@ const Pagenav = ({resultsUrl}) => {
  }
 
  useEffect(() => {
-   getResults(resultsUrl)
- }, [resultsUrl])
+   getResults(`https://swapi.dev/api/people`)
+ }, [])
 
  function loadPrevious() {
    getResults(previousPageUrl);
@@ -32,7 +32,6 @@ const Pagenav = ({resultsUrl}) => {
 
  return (
   <>
-     <h1>{resultsUrl}</h1>
     {results.length > 0 ? <section className="character-display">{results.map(result => <CharacterDisplay key={result.name} item={result} />)}</section> : <p>Nothing to display</p>}
     <div className="navbtn">
       {previousPageUrl != null ? <button className="navs" onClick={() => loadPrevious()}>Previous</button> : null}

@@ -1,9 +1,12 @@
 import { getSuggestedQuery } from "@testing-library/react";
 import React, { useState } from "react";
 
-const Search = ({ searchQuery, setSearchQuery }) => {
+  const Search = ({ getQuery }) => {
+  const [text, setText] = useState("");
+
   const onChange = (q) => {
-    setSearchQuery(q);
+    setText(q);
+    getQuery(q);
   };
 
   return (
@@ -13,12 +16,12 @@ const Search = ({ searchQuery, setSearchQuery }) => {
           type="text"
           placeholder="Search"
           autoFocus
-          value={searchQuery}
+          value={text}
           onChange={(e) => onChange(e.target.value)}
         />
       </form>
     </section>
   );
-};
+}; 
 
 export default Search;
