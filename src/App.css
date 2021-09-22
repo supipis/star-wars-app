@@ -8,6 +8,9 @@ html, body {
   background: #000 url('img/starbg.jpeg') no-repeat center/cover;
   height: auto;
   color: #fff;
+}
+
+h1, p, button, input{
   font-family: 'Poppins', sans-serif;
 }
 

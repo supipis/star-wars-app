@@ -28,7 +28,7 @@ const CharacterDisplay = ({ item }) => {
 					show ? <ul>
 				<li>Birth year :{item.birth_year}</li>
 				<li>Gender : {item.gender}</li>
-				<li>height : {item.height}</li>
+				<li>Height : {item.height}</li>
 				<li>Home world : {homeworld}</li>
 
 					</ul> : null}
