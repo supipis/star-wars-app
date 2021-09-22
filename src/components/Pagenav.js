@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CharacterDisplay from './CharacterDisplay';
 import Items from './Items';
+import Spinner from './Spinner';
 
 
 const Pagenav = ({resultsUrl}) => {
@@ -33,7 +34,7 @@ const Pagenav = ({resultsUrl}) => {
  return (
   <>
      <h1>{resultsUrl}</h1>
-    {results.length > 0 ? <section className="character-display">{results.map(result => <CharacterDisplay key={result.name} item={result} />)}</section> : <p>Nothing to display</p>}
+    {results.length > 0 ? <section className="character-display">{results.map(result => <CharacterDisplay key={result.name} item={result} />)}</section> : <Spinner />}
     <div className="navbtn">
       {previousPageUrl != null ? <button className="navs" onClick={() => loadPrevious()}>Previous</button> : null}
       {nextPageUrl != null ? <button className="navs" onClick={() => loadNext()}>Next</button> : null}
